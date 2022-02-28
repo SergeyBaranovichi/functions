@@ -13,3 +13,24 @@
 # годов и выводила в консоль соответсвующее число строк вида:
 # 2000 - високосный год
 # 1900 - не високосный год
+
+
+def is_year_leap(years: list):
+    for year in years:
+        if year % 4 == 0:
+            if year % 100:
+                print(f"{year} - високосный год")
+                continue
+            else:
+                if year % 400 == 0:
+                    print(f"{year} - високосный год")
+                    continue
+                else:
+                    print(f"{year} - не високосный год")
+                    continue
+        else:
+            print(f"{year} - не високосный год")
+
+
+check_years = [int(input("Введите год: ")) for _ in range(int(input("Введите количетсво годов для проверки: ")))]
+is_year_leap(check_years)
